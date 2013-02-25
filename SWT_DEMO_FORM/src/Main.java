@@ -134,7 +134,7 @@ public class Main {
 	
 	public Image create_image(String file) {
 		try {
-			return new Image(Display.getCurrent(), new FileInputStream("./images/"+file));
+			return new Image(Display.getCurrent(), new FileInputStream("../images/"+file));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

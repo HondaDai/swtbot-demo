@@ -2,29 +2,29 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="libs/swt/swt_osx64.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.apache.log4j_1.2.13.v200903072027.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.ant.optional.junit3_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.ant.optional.junit4_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.eclipse.core_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.eclipse.finder_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.eclipse.gef.finder_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.eclipse.junit3.headless_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.eclipse.junit4.headless_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.eclipse.spy_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.eclipse.ui_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.forms.finder_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.go_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.junit4_x_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.eclipse.swtbot.swt.finder_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.hamcrest_1.1.0.v20090501071000.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.hamcrest.core.source_1.1.0.v20090501071000.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.hamcrest.integration_1.1.0.v20090501071000.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.hamcrest.integration.source_1.1.0.v20090501071000.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.hamcrest.library_1.1.0.v20090501071000.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.hamcrest.library.source_1.1.0.v20090501071000.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.hamcrest.text_1.1.0.v20090501071000.jar"/>
-	<classpathentry kind="lib" path="libs/swtbot/org.hamcrest.text.source_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="../libs/swt/swt_osx64.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.apache.log4j_1.2.13.v200903072027.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.ant.optional.junit3_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.ant.optional.junit4_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.eclipse.core_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.eclipse.finder_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.eclipse.gef.finder_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.eclipse.junit3.headless_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.eclipse.junit4.headless_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.eclipse.spy_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.eclipse.ui_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.forms.finder_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.go_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.junit4_x_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.eclipse.swtbot.swt.finder_2.0.4.20110304_0338-e5aff47-dev-e35.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.hamcrest_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.hamcrest.core.source_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.hamcrest.integration_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.hamcrest.integration.source_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.hamcrest.library_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.hamcrest.library.source_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.hamcrest.text_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="../libs/swtbot/org.hamcrest.text.source_1.1.0.v20090501071000.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
