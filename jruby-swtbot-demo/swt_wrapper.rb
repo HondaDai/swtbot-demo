@@ -1,22 +1,4 @@
-SWT_LIB_PATH ="#{Main.lib_path}/swt"
 
-
-
-if org.jruby.platform.Platform::IS_MAC  
-  os="osx"
-elsif org.jruby.platform.Platform::IS_LINUX 
-  os="linux"
-elsif org.jruby.platform.Platform::IS_WINDOWS 
-  os="win"
-end
-
-if org.jruby.platform.Platform::ARCH =~ /64/
-  arch="64"
-else
-  arch="32"
-end
-
-require "#{SWT_LIB_PATH}/swt_#{os}#{arch}"
 
 module Swt
   import org.eclipse.swt.SWT
