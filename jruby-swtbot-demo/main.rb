@@ -9,10 +9,12 @@ Dir.glob('../libs/swt*/*.jar') do |jar|
   require jar
 end
 
+require 'SWTBotUtils.jar'
 
 require 'swt_wrapper'
 
-
+import com.handlino.swtbot.patch.SWTBotUtils
+#print SWTBotUtils
 
 module SwtDemo
   extend self
@@ -39,7 +41,7 @@ module SwtDemo
 
   def default_menu_handler(name)
     Swt::Widgets::Listener.impl do |method, evt|
-      puts 'Click '+name.to_s
+      puts '***Click '+name.to_s
     end
   end
 
@@ -62,6 +64,10 @@ module SwtDemo
   end
 
 
+  def test_gui
+    SWTBotUtils.findSwtBotMenuByMenu(@menu, "Q1").click();
+  end
+
 
   @display = Swt::Widgets::Display.get_current
   @shell = Swt::Widgets::Shell.new( @display, Swt::SWT::ON_TOP | Swt::SWT::MODELESS)
@@ -77,6 +83,18 @@ module SwtDemo
   @Q2 = add_menu_item( "Q2")
   @Q3 = add_menu_item( "Q3")
   #@menu.visible = true
+
+  
+    
+  #appender = org.apache.log4j.ConsoleAppender.new org.apache.log4j.PatternLayout.new ""
+  appender = org.apache.log4j.Appender.impl do |method, evt|
+  end
+  
+  org.apache.log4j.BasicConfigurator.configure(appender);
+  test_gui
+  
+
+
 
   run
 

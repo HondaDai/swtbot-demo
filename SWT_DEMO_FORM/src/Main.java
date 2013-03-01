@@ -16,6 +16,8 @@ import org.eclipse.swtbot.swt.finder.SWTBot;
 import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotTrayItem;
 
+import com.handlino.swtbot.patch.SWTBotUtils;
+
 
 public class Main {
 	

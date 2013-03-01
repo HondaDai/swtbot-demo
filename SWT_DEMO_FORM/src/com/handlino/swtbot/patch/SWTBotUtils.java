@@ -1,3 +1,4 @@
+package com.handlino.swtbot.patch;
 import static org.eclipse.swtbot.swt.finder.matchers.WidgetMatcherFactory.withMnemonic;
 
 import java.util.List;
