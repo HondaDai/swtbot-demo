@@ -66,6 +66,7 @@ module SwtDemo
 
   def test_gui
     SWTBotUtils.findSwtBotMenuByMenu(@menu, "Q1").click();
+    SWTBotUtils.findSwtBotMenuByMenu(@menu, "Q2").click();
   end
 
 
@@ -80,17 +81,24 @@ module SwtDemo
 
   @menu = Swt::Widgets::Menu.new(@shell, Swt::SWT::POP_UP)
   @Q1 = add_menu_item( "Q1")
-  @Q2 = add_menu_item( "Q2")
+  @Q2 = add_menu_item( "Q2", nil, Swt::SWT::CASCADE)
+  @Q2.menu = Swt::Widgets::Menu.new(@menu)
+  @Q2_1 = add_menu_item( "Q2-1", nil, Swt::SWT::PUSH, @Q2.menu)
+  @Q2_2 = add_menu_item( "Q2-2", nil, Swt::SWT::PUSH, @Q2.menu)
+  @Q2_3 = add_menu_item( "Q2-3", nil, Swt::SWT::PUSH, @Q2.menu)
   @Q3 = add_menu_item( "Q3")
   #@menu.visible = true
 
-  
-    
-  #appender = org.apache.log4j.ConsoleAppender.new org.apache.log4j.PatternLayout.new ""
-  appender = org.apache.log4j.Appender.impl do |method, evt|
+  class QuietLayout < org.apache.log4j.PatternLayout
+    def format(event)
+      ""
+    end
   end
-  
+
+  appender = org.apache.log4j.ConsoleAppender.new QuietLayout.new
   org.apache.log4j.BasicConfigurator.configure(appender);
+
+
   test_gui
   
 
