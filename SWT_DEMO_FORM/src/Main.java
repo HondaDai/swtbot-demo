@@ -2,9 +2,12 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Dialog;
+import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
@@ -14,29 +17,30 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.TrayItem;
 import org.eclipse.swtbot.swt.finder.SWTBot;
 import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
+import org.eclipse.swtbot.swt.finder.widgets.SWTBotShell;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotTrayItem;
 
 import com.handlino.swtbot.patch.SWTBotUtils;
 
-
 public class Main {
 	
 	public static void main(String[] args){
+
+		//System.out.println(IDialogConstants.OPEN_LABEL);
 		new Main();
 	}
 	
 	
 	Menu menu ;
-
+	Dialog dialog;
 	public Main() {
 		Display display = new Display();
 		
 		Shell shell = GUI(display);
-
 		
 		shell.open();
 		try {
-			testGUI(shell);
+			//testGUI(shell);
 		} catch(Exception e){
 			e.printStackTrace();
 		}
@@ -52,18 +56,62 @@ public class Main {
 	}
 	
 
-	public void testGUI(Shell shell){
-		SWTBotPreferences.PLAYBACK_DELAY = 100;
-		SWTBot bot = new SWTBot(shell);
+	public void testGUI(final Shell shell){
 		
+		
+		
+		//shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+		
+//		SWTWorkbenchBot bot = new SWTWorkbenchBot();
+		
+//		for(SWTBotView v : bot.views())
+//			System.out.println(v.toString());
+		
+		
+		SWTBotPreferences.PLAYBACK_DELAY = 100;
+		final SWTBot bot = new SWTBot(shell);
+		
+		
+
 		// all tray
 		for (SWTBotTrayItem trayitem : bot.trayItems()) {
 			System.out.println(trayitem);
 		}
-
+		
 		SWTBotUtils.findSwtBotMenuByMenu(menu, "Q1").click();
 		SWTBotUtils.findSwtBotMenuByMenu(menu, "Q2").menu("Q2-2").click();
+		for(SWTBotShell s: bot.shells())
+			System.out.println(s);
+		final SWTBotShell ss = bot.shells()[0];
+		//bot.shells()[0].activate();
+		
+		
 		bot.button("Button").click();
+
+		SWTBotUtils.findSwtBotMenuByMenu(menu, "Q3").click();
+		
+		Runnable r = new Runnable(){
+
+			@Override
+			public void run() {
+				/*try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}*/
+				//bot.button(IDialogConstants.CANCEL_LABEL).click();
+				for(SWTBotShell s: bot.shells())
+					System.out.println(s);
+				System.out.println(ss.equals(bot.shells()[0]));
+				SWTBot b = new SWTBot(bot.shells()[0].widget);
+				b.button(IDialogConstants.CANCEL_LABEL).click();
+			}};
+		
+		//Display.getDefault().syncExec(r);
+		new Thread(r).start();
+
+		
 		
 		
 		
@@ -75,7 +123,7 @@ public class Main {
 
 		
 		// Shell shell = new Shell(display, SWT.ON_TOP|SWT.MODELESS);
-		Shell shell = new Shell(display);
+		final Shell shell = new Shell(display);
 		shell.setSize(400, 300);
 		
 		
@@ -118,6 +166,20 @@ public class Main {
 		});
 		
 		
+		Listener open_dialog_handler = new Listener() {
+			
+			@Override
+			public void handleEvent(Event e) {
+				System.out.println("Open Dialog");
+				
+				dialog = new DirectoryDialog(shell);
+				DirectoryDialog dirdialog = (DirectoryDialog)dialog;
+				
+				
+				String dir = dirdialog.open();
+				System.out.println("Dir: "+dir);
+			}
+		};
 		
 		// system tray menu
 		MenuItem Q1 = add_menu_item("Q1", null, menu, SWT.PUSH);
@@ -128,7 +190,7 @@ public class Main {
 		add_menu_item("Q2-2", null, Q2_menu, SWT.PUSH);
 		add_menu_item("Q2-3", null, Q2_menu, SWT.PUSH);
 		
-		MenuItem Q3 = add_menu_item("Q3", null, menu, SWT.PUSH);
+		MenuItem Q3 = add_menu_item("Q3", open_dialog_handler, menu, SWT.PUSH);
 		
 		return shell;
 		
