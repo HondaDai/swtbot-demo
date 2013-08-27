@@ -19,8 +19,6 @@ import com.handlino.swtbot.patch.SWTBotUtils
 module SwtDemo
   extend self
 
-
-
   def run
     puts 'run SwtDeom OK, spend '+(Time.now.to_f - INIT_AT).to_s
     while(!@shell.is_disposed) do
@@ -67,6 +65,7 @@ module SwtDemo
   def test_gui
     SWTBotUtils.findSwtBotMenuByMenu(@menu, "Q1").click();
     SWTBotUtils.findSwtBotMenuByMenu(@menu, "Q2").click();
+    SWTBotUtils.findSwtBotMenuByMenu(@menu, "Q2-3").click();
   end
 
 
